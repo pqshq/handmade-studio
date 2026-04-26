@@ -7,6 +7,7 @@ import { FeaturedProjects } from "@/sections/FeaturedProjects";
 import { Hero } from "@/sections/Hero";
 import { Materials } from "@/sections/Materials";
 import { Process } from "@/sections/Process";
+import { WhyChooseUs } from "@/sections/WhyChooseUs";
 import { WorkDirections } from "@/sections/WorkDirections";
 import type { Locale } from "@/types";
 
@@ -29,6 +30,7 @@ export default async function HomePage({ params }: HomePageProps) {
     <>
       <Hero {...content.hero} />
       <About {...content.about} />
+      <WhyChooseUs {...content.whyChooseUs} />
       <WorkDirections {...content.workDirections} />
       <Materials {...content.materials} />
       <FeaturedProjects {...content.featuredProjects} />

@@ -1,3 +1,4 @@
+import { assets } from "@/config/assets";
 import type { Dictionary } from "@/i18n/types";
 
 export const en: Dictionary = {
@@ -18,6 +19,30 @@ export const en: Dictionary = {
       href: "/",
       label: "Home",
     },
+    {
+      href: "#about",
+      label: "About",
+    },
+    {
+      href: "#work-directions",
+      label: "Directions",
+    },
+    {
+      href: "#materials",
+      label: "Materials",
+    },
+    {
+      href: "#featured-projects",
+      label: "Projects",
+    },
+    {
+      href: "#process",
+      label: "Process",
+    },
+    {
+      href: "#contact",
+      label: "Contact",
+    },
   ],
   home: {
     hero: {
@@ -27,7 +52,7 @@ export const en: Dictionary = {
       primaryCta: "Discuss a project",
       primaryCtaHref: "#contact",
       secondaryCta: "View work",
-      secondaryCtaHref: "#projects",
+      secondaryCtaHref: "#featured-projects",
     },
     about: {
       title: "About the studio",
@@ -54,6 +79,37 @@ export const en: Dictionary = {
           title: "Approach to space",
           description:
             "We consider the interior, exterior, usage scenarios and installation so the object works as part of its surroundings.",
+        },
+      ],
+    },
+    whyChooseUs: {
+      title: "Why choose us",
+      subtitle:
+        "A calm process, honest materials and custom thinking for pieces that feel natural in their space.",
+      benefits: [
+        {
+          id: "individual-work",
+          title: "Individual work",
+          description:
+            "Every piece starts from the task, not from a standard catalog shape.",
+        },
+        {
+          id: "material-honesty",
+          title: "Honest materials",
+          description:
+            "Wood, metal and gypsum are chosen for purpose, texture and long-term use.",
+        },
+        {
+          id: "spatial-fit",
+          title: "Spatial fit",
+          description:
+            "We consider the room, facade or terrace so the object belongs to the place.",
+        },
+        {
+          id: "calm-process",
+          title: "Calm process",
+          description:
+            "Clear discussion, practical steps and careful making from idea to handover.",
         },
       ],
     },
@@ -155,6 +211,7 @@ export const en: Dictionary = {
       title: "Featured projects",
       description:
         "A few demo projects show the format of the future portfolio: from small pieces to spatial design.",
+      viewLabel: "View project",
       items: [
         {
           id: "address-sign-demo",
@@ -164,6 +221,8 @@ export const en: Dictionary = {
           category: "Signs",
           material: "Wood and metal",
           href: "#address-sign-demo",
+          imageSrc: assets.projects.house,
+          imageAlt: "Wooden yard houses and outdoor handmade details",
         },
         {
           id: "terrace-wood-decor-demo",
@@ -173,6 +232,8 @@ export const en: Dictionary = {
           category: "Decor",
           material: "Wood",
           href: "#terrace-wood-decor-demo",
+          imageSrc: assets.projects.statue,
+          imageAlt: "Handmade hooded statue in a garden setting",
         },
         {
           id: "custom-furniture-demo",
@@ -182,6 +243,8 @@ export const en: Dictionary = {
           category: "Furniture",
           material: "Wood",
           href: "#custom-furniture-demo",
+          imageSrc: assets.projects.bench,
+          imageAlt: "Wooden bench made for an outdoor yard",
         },
         {
           id: "restaurant-design-demo",
@@ -191,6 +254,8 @@ export const en: Dictionary = {
           category: "Commercial space",
           material: "Combined materials",
           href: "#restaurant-design-demo",
+          imageSrc: assets.projects.wall,
+          imageAlt: "Relief wall artwork with waterfall-inspired texture",
         },
       ],
     },

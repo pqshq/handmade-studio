@@ -1,3 +1,4 @@
+import { assets } from "@/config/assets";
 import type { Dictionary } from "@/i18n/types";
 
 export const ru: Dictionary = {
@@ -17,6 +18,30 @@ export const ru: Dictionary = {
       href: "/",
       label: "Главная",
     },
+    {
+      href: "#about",
+      label: "О студии",
+    },
+    {
+      href: "#work-directions",
+      label: "Направления",
+    },
+    {
+      href: "#materials",
+      label: "Материалы",
+    },
+    {
+      href: "#featured-projects",
+      label: "Проекты",
+    },
+    {
+      href: "#process",
+      label: "Процесс",
+    },
+    {
+      href: "#contact",
+      label: "Контакты",
+    },
   ],
   home: {
     hero: {
@@ -26,7 +51,7 @@ export const ru: Dictionary = {
       primaryCta: "Обсудить проект",
       primaryCtaHref: "#contact",
       secondaryCta: "Смотреть работы",
-      secondaryCtaHref: "#projects",
+      secondaryCtaHref: "#featured-projects",
     },
     about: {
       title: "О студии",
@@ -53,6 +78,37 @@ export const ru: Dictionary = {
           title: "Подход к пространству",
           description:
             "Учитываем интерьер, экстерьер, сценарии использования и монтаж, чтобы предмет работал как часть среды.",
+        },
+      ],
+    },
+    whyChooseUs: {
+      title: "Почему выбирают нас",
+      subtitle:
+        "Спокойный процесс, честные материалы и индивидуальный подход к изделиям, которые естественно живут в пространстве.",
+      benefits: [
+        {
+          id: "individual-work",
+          title: "Индивидуальная работа",
+          description:
+            "Каждое изделие начинается с задачи, а не с готовой формы из каталога.",
+        },
+        {
+          id: "material-honesty",
+          title: "Честные материалы",
+          description:
+            "Дерево, металл и гипс подбираются по назначению, фактуре и сроку службы.",
+        },
+        {
+          id: "spatial-fit",
+          title: "Попадание в среду",
+          description:
+            "Учитываем комнату, фасад или террасу, чтобы предмет выглядел частью места.",
+        },
+        {
+          id: "calm-process",
+          title: "Спокойный процесс",
+          description:
+            "Понятное обсуждение, практичные шаги и аккуратное изготовление до передачи.",
         },
       ],
     },
@@ -154,6 +210,7 @@ export const ru: Dictionary = {
       title: "Избранные проекты",
       description:
         "Несколько demo-проектов показывают формат будущего портфолио: от небольших изделий до оформления пространств.",
+      viewLabel: "Смотреть проект",
       items: [
         {
           id: "address-sign-demo",
@@ -163,6 +220,8 @@ export const ru: Dictionary = {
           category: "Таблички",
           material: "Дерево и металл",
           href: "#address-sign-demo",
+          imageSrc: assets.projects.house,
+          imageAlt: "Деревянные домики во дворе и детали ручной работы",
         },
         {
           id: "terrace-wood-decor-demo",
@@ -172,6 +231,8 @@ export const ru: Dictionary = {
           category: "Декор",
           material: "Дерево",
           href: "#terrace-wood-decor-demo",
+          imageSrc: assets.projects.statue,
+          imageAlt: "Скульптура в капюшоне ручной работы в садовом окружении",
         },
         {
           id: "custom-furniture-demo",
@@ -181,6 +242,8 @@ export const ru: Dictionary = {
           category: "Мебель",
           material: "Дерево",
           href: "#custom-furniture-demo",
+          imageSrc: assets.projects.bench,
+          imageAlt: "Деревянная скамья для двора",
         },
         {
           id: "restaurant-design-demo",
@@ -190,6 +253,8 @@ export const ru: Dictionary = {
           category: "Коммерческое пространство",
           material: "Комбинированные материалы",
           href: "#restaurant-design-demo",
+          imageSrc: assets.projects.wall,
+          imageAlt: "Рельефная стена с фактурой, вдохновленной водопадом",
         },
       ],
     },

@@ -1,3 +1,4 @@
+import { assets } from "@/config/assets";
 import type { Dictionary } from "@/i18n/types";
 
 export const lv: Dictionary = {
@@ -18,6 +19,30 @@ export const lv: Dictionary = {
       href: "/",
       label: "Sākums",
     },
+    {
+      href: "#about",
+      label: "Par studiju",
+    },
+    {
+      href: "#work-directions",
+      label: "Virzieni",
+    },
+    {
+      href: "#materials",
+      label: "Materiāli",
+    },
+    {
+      href: "#featured-projects",
+      label: "Projekti",
+    },
+    {
+      href: "#process",
+      label: "Process",
+    },
+    {
+      href: "#contact",
+      label: "Kontakti",
+    },
   ],
   home: {
     hero: {
@@ -27,7 +52,7 @@ export const lv: Dictionary = {
       primaryCta: "Apspriest projektu",
       primaryCtaHref: "#contact",
       secondaryCta: "Skatīt darbus",
-      secondaryCtaHref: "#projects",
+      secondaryCtaHref: "#featured-projects",
     },
     about: {
       title: "Par studiju",
@@ -54,6 +79,37 @@ export const lv: Dictionary = {
           title: "Pieeja telpai",
           description:
             "Ņemam vērā interjeru, eksterjeru, lietošanas scenārijus un montāžu, lai priekšmets darbotos kā vides daļa.",
+        },
+      ],
+    },
+    whyChooseUs: {
+      title: "Kāpēc izvēlēties mūs",
+      subtitle:
+        "Mierīgs process, godīgi materiāli un individuāla pieeja darbiem, kas iederas savā telpā.",
+      benefits: [
+        {
+          id: "individual-work",
+          title: "Individuāls darbs",
+          description:
+            "Katrs izstrādājums sākas no uzdevuma, nevis no standarta kataloga formas.",
+        },
+        {
+          id: "material-honesty",
+          title: "Godīgi materiāli",
+          description:
+            "Koks, metāls un ģipsis tiek izvēlēti pēc mērķa, faktūras un lietošanas.",
+        },
+        {
+          id: "spatial-fit",
+          title: "Saderība ar telpu",
+          description:
+            "Ņemam vērā telpu, fasādi vai terasi, lai objekts iederētos vidē.",
+        },
+        {
+          id: "calm-process",
+          title: "Mierīgs process",
+          description:
+            "Skaidra saruna, praktiski soļi un rūpīga izgatavošana līdz nodošanai.",
         },
       ],
     },
@@ -155,6 +211,7 @@ export const lv: Dictionary = {
       title: "Izvēlētie projekti",
       description:
         "Daži demo projekti rāda nākotnes portfolio formātu: no nelieliem izstrādājumiem līdz telpu noformējumam.",
+      viewLabel: "Skatīt projektu",
       items: [
         {
           id: "address-sign-demo",
@@ -164,6 +221,8 @@ export const lv: Dictionary = {
           category: "Plāksnes",
           material: "Koks un metāls",
           href: "#address-sign-demo",
+          imageSrc: assets.projects.house,
+          imageAlt: "Koka pagalma mājiņas un roku darba āra detaļas",
         },
         {
           id: "terrace-wood-decor-demo",
@@ -173,6 +232,8 @@ export const lv: Dictionary = {
           category: "Dekors",
           material: "Koks",
           href: "#terrace-wood-decor-demo",
+          imageSrc: assets.projects.statue,
+          imageAlt: "Roku darba kapuces skulptūra dārza vidē",
         },
         {
           id: "custom-furniture-demo",
@@ -182,6 +243,8 @@ export const lv: Dictionary = {
           category: "Mēbeles",
           material: "Koks",
           href: "#custom-furniture-demo",
+          imageSrc: assets.projects.bench,
+          imageAlt: "Koka sols pagalma zonai",
         },
         {
           id: "restaurant-design-demo",
@@ -191,6 +254,8 @@ export const lv: Dictionary = {
           category: "Komerctelpa",
           material: "Kombinēti materiāli",
           href: "#restaurant-design-demo",
+          imageSrc: assets.projects.wall,
+          imageAlt: "Reljefa siena ar ūdenskrituma iedvesmotu faktūru",
         },
       ],
     },

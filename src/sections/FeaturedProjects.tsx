@@ -1,38 +1,50 @@
+import Image from "next/image";
 import type { FeaturedProjectsContent } from "@/types";
 
 export function FeaturedProjects({
   title,
   description,
+  viewLabel,
   items,
 }: FeaturedProjectsContent) {
   return (
-    <section className="bg-[#f8f4ed] px-6 py-20 sm:py-24 [&>*]:mx-auto [&>*]:max-w-[1200px]">
-      <div className="max-w-3xl">
-        <h2 className="max-w-2xl text-4xl font-semibold leading-tight text-[#211b16] sm:text-5xl">
-          {title}
-        </h2>
-        <p className="mt-6 max-w-3xl text-lg leading-9 text-[#5f5347]">
-          {description}
-        </p>
+    <section className="section-shell portfolio-section" id="featured-projects">
+      <div className="section-container grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-end">
+        <h2 className="section-title">{title}</h2>
+        <p className="section-copy">{description}</p>
       </div>
 
-      <div className="mt-12 grid gap-6 md:grid-cols-2">
+      <div className="section-container mt-16 grid gap-8 md:grid-cols-2">
         {items.map((item) => (
           <a
-            className="block rounded-lg border border-[#ded2c2] bg-[#fffdf8] p-8 text-[#211b16] shadow-[0_24px_76px_rgba(64,48,31,0.10)] transition-colors hover:border-[#b99b70] hover:bg-white"
+            className="portfolio-card group block p-2.5 sm:p-3"
             href={item.href}
             key={item.id}
           >
-            <div className="flex flex-wrap gap-2 text-xs font-semibold uppercase text-[#9a7644]">
-              <span>{item.category}</span>
-              <span>{item.material}</span>
+            <div className="portfolio-placeholder relative aspect-[16/10] overflow-hidden rounded-[1.65rem]">
+              <Image
+                alt={item.imageAlt}
+                className="portfolio-image object-cover"
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                src={item.imageSrc}
+              />
+              <div className="portfolio-placeholder-overlay absolute inset-0" />
+              <div className="portfolio-card-cta absolute bottom-5 left-5 rounded-full border border-white/28 bg-[#1b120c]/44 px-4 py-2 text-xs font-semibold text-[#fff8ee] shadow-[0_14px_34px_rgba(0,0,0,0.26)] backdrop-blur-md">
+                {viewLabel}
+              </div>
             </div>
-            <h3 className="mt-4 text-xl font-semibold leading-snug">
-              {item.title}
-            </h3>
-            <p className="mt-4 max-w-xl text-sm leading-8 text-[#6f6254]">
-              {item.description}
-            </p>
+
+            <div className="p-5 sm:p-7">
+              <div className="studio-eyebrow flex flex-wrap gap-2">
+                <span>{item.category}</span>
+                <span>{item.material}</span>
+              </div>
+              <h3 className="studio-card-title mt-3">{item.title}</h3>
+              <p className="studio-card-copy mt-3 max-w-xl">
+                {item.description}
+              </p>
+            </div>
           </a>
         ))}
       </div>

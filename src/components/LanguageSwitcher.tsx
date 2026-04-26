@@ -14,15 +14,15 @@ export function LanguageSwitcher({
   return (
     <div
       aria-label={label}
-      className="flex items-center gap-1 rounded-full border border-[#ded2c2] bg-[#fffaf2] p-1 text-xs font-medium"
+      className="flex shrink-0 items-center gap-0.5 rounded-full border border-white/15 bg-white/10 p-1 text-[0.68rem] font-medium shadow-[0_10px_30px_rgba(0,0,0,0.18)] backdrop-blur-md sm:gap-1 sm:text-xs"
     >
       {locales.map((locale) => (
         <Link
           aria-current={locale === currentLocale ? "page" : undefined}
           className={
             locale === currentLocale
-              ? "rounded-full bg-[#211b16] px-3 py-1.5 text-white"
-              : "rounded-full px-3 py-1.5 text-[#7c6d5d] transition-colors hover:text-[#211b16]"
+              ? "rounded-full bg-[#fff7ea] px-2.5 py-1.5 text-[#211b16] shadow-sm sm:px-3"
+              : "rounded-full px-2.5 py-1.5 text-[#d8c8b8] transition-colors hover:bg-white/10 hover:text-[#fff7ea] sm:px-3"
           }
           href={`/${locale}`}
           key={locale}

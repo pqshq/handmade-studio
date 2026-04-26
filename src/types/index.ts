@@ -35,6 +35,18 @@ export type AboutContent = {
   advantages: AboutAdvantage[];
 };
 
+export type WhyChooseUsBenefit = {
+  id: string;
+  title: string;
+  description: string;
+};
+
+export type WhyChooseUsContent = {
+  title: string;
+  subtitle: string;
+  benefits: WhyChooseUsBenefit[];
+};
+
 export type WorkDirectionItem = {
   id: string;
   title: string;
@@ -70,11 +82,14 @@ export type FeaturedProjectItem = {
   category: string;
   material: string;
   href: string;
+  imageSrc: string;
+  imageAlt: string;
 };
 
 export type FeaturedProjectsContent = {
   title: string;
   description: string;
+  viewLabel: string;
   items: FeaturedProjectItem[];
 };
 
@@ -117,6 +132,7 @@ export type ContactContent = {
 export type HomeContent = {
   hero: HeroContent;
   about: AboutContent;
+  whyChooseUs: WhyChooseUsContent;
   workDirections: WorkDirectionsContent;
   materials: MaterialsContent;
   featuredProjects: FeaturedProjectsContent;

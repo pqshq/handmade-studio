@@ -1,7 +1,7 @@
 import type { ContactContent } from "@/types";
 
 const channelCardClassName =
-  "block rounded-lg border border-[#dacbb8] bg-[#fffaf2] p-6 text-[#211b16] shadow-[0_20px_64px_rgba(64,48,31,0.08)] transition-colors hover:border-[#b99b70] hover:bg-white";
+  "studio-card studio-link-card block p-7";
 
 export function Contact({
   id,
@@ -12,27 +12,22 @@ export function Contact({
   submitLabel,
 }: ContactContent) {
   return (
-    <section
-      className="bg-[#f3eadc] px-6 py-20 sm:py-24 [&>*]:mx-auto [&>*]:max-w-[1200px]"
-      id={id}
-    >
-      <div className="grid gap-12 lg:grid-cols-2">
+    <section className="section-shell section-contact" id={id}>
+      <div aria-hidden="true" className="section-bg" />
+      <div className="section-container grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
         <div>
-          <h2 className="max-w-2xl text-4xl font-semibold leading-tight text-[#211b16] sm:text-5xl">
-            {title}
-          </h2>
-          <p className="mt-6 max-w-2xl text-lg leading-9 text-[#5f5347]">
-            {description}
-          </p>
+          <div className="section-rule mb-8" aria-hidden="true" />
+          <h2 className="section-title">{title}</h2>
+          <p className="section-copy mt-6 max-w-2xl">{description}</p>
 
           <div className="mt-10 grid gap-4">
             {channels.map((channel) => {
               const channelContent = (
                 <>
-                  <h3 className="text-lg font-semibold leading-snug">
+                  <h3 className="studio-card-title relative">
                     {channel.label}
                   </h3>
-                  <p className="mt-3 text-sm leading-7 text-[#6f6254]">
+                  <p className="studio-card-copy relative mt-3">
                     {channel.description}
                   </p>
                 </>
@@ -59,7 +54,7 @@ export function Contact({
           </div>
         </div>
 
-        <div className="grid gap-5 rounded-lg border border-[#dacbb8] bg-[#fffaf2] p-7 shadow-[0_26px_80px_rgba(64,48,31,0.12)] sm:p-8">
+        <div className="conversion-card grid gap-5 p-7 sm:p-9">
           {fields.map((field) => (
             <label className="grid gap-2" htmlFor={field.id} key={field.id}>
               <span className="text-sm font-semibold text-[#211b16]">
@@ -67,14 +62,14 @@ export function Contact({
               </span>
               {field.type === "textarea" ? (
                 <textarea
-                  className="min-h-36 rounded-md border border-[#cdbb9f] bg-[#fdf8ef] px-4 py-3 text-sm leading-7 text-[#211b16] outline-none transition-colors placeholder:text-[#9d8b78] focus:border-[#8f7049]"
+                  className="form-field min-h-36 px-4 py-3 text-sm leading-7"
                   id={field.id}
                   name={field.id}
                   placeholder={field.placeholder}
                 />
               ) : (
                 <input
-                  className="min-h-12 rounded-md border border-[#cdbb9f] bg-[#fdf8ef] px-4 text-sm text-[#211b16] outline-none transition-colors placeholder:text-[#9d8b78] focus:border-[#8f7049]"
+                  className="form-field min-h-12 px-4 text-sm"
                   id={field.id}
                   name={field.id}
                   placeholder={field.placeholder}
@@ -85,7 +80,7 @@ export function Contact({
           ))}
 
           <button
-            className="mt-3 inline-flex min-h-13 items-center justify-center rounded-full border border-[#211b16] bg-[#211b16] px-8 text-sm font-semibold text-white shadow-[0_18px_44px_rgba(33,27,22,0.22)] transition-colors hover:bg-[#3a2f26]"
+            className="studio-button-dark mt-3 inline-flex min-h-13 items-center justify-center px-8 text-sm font-semibold"
             type="button"
           >
             {submitLabel}

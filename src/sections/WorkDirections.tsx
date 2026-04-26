@@ -16,32 +16,23 @@ export function WorkDirections({
   items,
 }: WorkDirectionsProps) {
   return (
-    <section className="bg-[#f3eadc] px-6 py-20 sm:py-24 [&>*]:mx-auto [&>*]:max-w-[1200px]">
-      <div className="max-w-3xl">
-        <h2 className="max-w-2xl text-4xl font-semibold leading-tight text-[#211b16] sm:text-5xl">
-          {title}
-        </h2>
-        <p className="mt-6 max-w-3xl text-lg leading-9 text-[#5f5347]">
-          {description}
-        </p>
+    <section className="section-shell section-wood" id="work-directions">
+      <div aria-hidden="true" className="section-bg" />
+      <div className="section-container">
+        <h2 className="section-title">{title}</h2>
+        <p className="section-copy mt-6">{description}</p>
       </div>
 
-      <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="section-container mt-14 grid gap-7 md:grid-cols-2 lg:grid-cols-3">
         {items.map((item) => (
           <a
-            className="block rounded-lg border border-[#dacbb8] bg-[#fffaf2] p-7 text-[#211b16] shadow-[0_24px_72px_rgba(64,48,31,0.10)] transition-colors hover:border-[#b99b70] hover:bg-white"
+            className="studio-card studio-link-card block p-8"
             href={item.href}
             key={item.id}
           >
-            <p className="text-xs font-semibold uppercase text-[#9a7644]">
-              {item.category}
-            </p>
-            <h3 className="mt-4 text-xl font-semibold leading-snug">
-              {item.title}
-            </h3>
-            <p className="mt-4 text-sm leading-8 text-[#6f6254]">
-              {item.description}
-            </p>
+            <p className="studio-eyebrow relative">{item.category}</p>
+            <h3 className="studio-card-title relative mt-4">{item.title}</h3>
+            <p className="studio-card-copy relative mt-4">{item.description}</p>
           </a>
         ))}
       </div>

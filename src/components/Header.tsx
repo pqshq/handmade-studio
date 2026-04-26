@@ -19,20 +19,22 @@ export function Header({
   const topHref = `${localizedPath(locale)}#top`;
 
   return (
-    <header className="sticky top-0 z-20 border-b border-[#ded2c2]/80 bg-[#f8f4ed]/95 px-6 py-4 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+    <header className="sticky top-0 z-30 border-b border-white/10 bg-[#120d09]/72 px-4 py-3 shadow-[0_18px_60px_rgba(0,0,0,0.18)] backdrop-blur-xl sm:px-6 sm:py-4">
+      <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-between gap-3 lg:flex-nowrap">
         <Link
-          className="text-sm font-semibold uppercase tracking-[0.18em] text-[#211b16]"
+          className="header-logo min-w-0 font-semibold uppercase text-[#fff7ea]"
           href={topHref}
         >
           {brand}
         </Link>
-        <nav className="flex flex-wrap items-center gap-4 text-sm text-[#6f6254]">
+        <nav className="order-3 hidden w-full min-w-0 flex-wrap items-center gap-x-4 gap-y-2 text-[#d8c8b8] lg:order-none lg:flex lg:w-auto lg:justify-center">
           {navigation.map((item) => (
             <Link
-              className="transition-colors hover:text-[#211b16]"
+              className="header-nav-link"
               key={item.href}
-              href={item.href === "/" ? topHref : localizedPath(locale, item.href)}
+              href={
+                item.href === "/" ? topHref : localizedPath(locale, item.href)
+              }
             >
               {item.label}
             </Link>
