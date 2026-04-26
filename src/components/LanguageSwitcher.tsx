@@ -12,14 +12,17 @@ export function LanguageSwitcher({
   label,
 }: LanguageSwitcherProps) {
   return (
-    <div aria-label={label} className="flex items-center gap-2 text-sm">
+    <div
+      aria-label={label}
+      className="flex items-center gap-1 rounded-full border border-[#ded2c2] bg-[#fffaf2] p-1 text-xs font-medium"
+    >
       {locales.map((locale) => (
         <Link
           aria-current={locale === currentLocale ? "page" : undefined}
           className={
             locale === currentLocale
-              ? "font-semibold text-neutral-950"
-              : "text-neutral-500"
+              ? "rounded-full bg-[#211b16] px-3 py-1.5 text-white"
+              : "rounded-full px-3 py-1.5 text-[#7c6d5d] transition-colors hover:text-[#211b16]"
           }
           href={`/${locale}`}
           key={locale}

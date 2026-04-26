@@ -12,7 +12,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang={defaultLocale}>
-      <body>{children}</body>
+      <body className="min-h-screen bg-[#f8f4ed] text-[#211b16] antialiased">
+        {children}
+      </body>
     </html>
   );
 }

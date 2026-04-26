@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { localizedPath } from "@/lib/localized-path";
 import type { Locale, NavigationItem } from "@/types";
 
 type HeaderProps = {
@@ -15,15 +16,24 @@ export function Header({
   navigation,
   languageSwitcher,
 }: HeaderProps) {
+  const topHref = `${localizedPath(locale)}#top`;
+
   return (
-    <header className="border-b border-neutral-200 px-6 py-4">
-      <div className="mx-auto flex max-w-5xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <Link className="font-semibold text-neutral-950" href={`/${locale}`}>
+    <header className="sticky top-0 z-20 border-b border-[#ded2c2]/80 bg-[#f8f4ed]/95 px-6 py-4 backdrop-blur">
+      <div className="mx-auto flex max-w-6xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <Link
+          className="text-sm font-semibold uppercase tracking-[0.18em] text-[#211b16]"
+          href={topHref}
+        >
           {brand}
         </Link>
-        <nav className="flex flex-wrap items-center gap-4 text-sm text-neutral-700">
+        <nav className="flex flex-wrap items-center gap-4 text-sm text-[#6f6254]">
           {navigation.map((item) => (
-            <Link key={item.href} href={`/${locale}${item.href}`}>
+            <Link
+              className="transition-colors hover:text-[#211b16]"
+              key={item.href}
+              href={item.href === "/" ? topHref : localizedPath(locale, item.href)}
+            >
               {item.label}
             </Link>
           ))}

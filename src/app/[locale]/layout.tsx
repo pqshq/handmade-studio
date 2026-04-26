@@ -37,7 +37,9 @@ export default async function LocaleLayout({
         navigation={dictionary.navigation}
         languageSwitcher={dictionary.common.languageSwitcher}
       />
-      <main>{children}</main>
+      <main className="overflow-hidden" id="top">
+        {children}
+      </main>
       <Footer
         brand={dictionary.common.brand}
         copyright={dictionary.common.footer.copyright}
