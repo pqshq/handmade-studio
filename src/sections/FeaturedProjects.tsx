@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { FeaturedProjectsContent } from "@/types";
 
 export function FeaturedProjects({
@@ -14,14 +15,14 @@ export function FeaturedProjects({
         <p className="section-copy">{description}</p>
       </div>
 
-      <div className="section-container mt-16 grid gap-8 md:grid-cols-2">
+      <div className="section-container mt-16 grid gap-7 md:grid-cols-2">
         {items.map((item) => (
-          <a
-            className="portfolio-card group block p-2.5 sm:p-3"
+          <Link
+            className="portfolio-card group block p-2"
             href={item.href}
             key={item.id}
           >
-            <div className="portfolio-placeholder relative aspect-[16/10] overflow-hidden rounded-[1.65rem]">
+            <div className="portfolio-placeholder relative aspect-[16/11] overflow-hidden rounded-[1.55rem]">
               <Image
                 alt={item.imageAlt}
                 className="portfolio-image object-cover"
@@ -30,22 +31,22 @@ export function FeaturedProjects({
                 src={item.imageSrc}
               />
               <div className="portfolio-placeholder-overlay absolute inset-0" />
-              <div className="portfolio-card-cta absolute bottom-5 left-5 rounded-full border border-white/28 bg-[#1b120c]/44 px-4 py-2 text-xs font-semibold text-[#fff8ee] shadow-[0_14px_34px_rgba(0,0,0,0.26)] backdrop-blur-md">
-                {viewLabel}
-              </div>
             </div>
 
-            <div className="p-5 sm:p-7">
+            <div className="p-5 sm:p-6">
               <div className="studio-eyebrow flex flex-wrap gap-2">
                 <span>{item.category}</span>
                 <span>{item.material}</span>
               </div>
               <h3 className="studio-card-title mt-3">{item.title}</h3>
-              <p className="studio-card-copy mt-3 max-w-xl">
+              <p className="studio-card-copy portfolio-card-copy mt-3 max-w-xl">
                 {item.description}
               </p>
+              <span className="portfolio-text-cta mt-5 inline-flex text-sm font-semibold">
+                {viewLabel}
+              </span>
             </div>
-          </a>
+          </Link>
         ))}
       </div>
     </section>

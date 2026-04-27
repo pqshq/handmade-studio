@@ -1,7 +1,12 @@
+import Link from "next/link";
 import type { ContactContent } from "@/types";
 
 const channelCardClassName =
   "studio-card studio-link-card block p-7";
+
+function isInternalHref(href: string) {
+  return href.startsWith("/") || href.startsWith("#");
+}
 
 export function Contact({
   id,
@@ -41,6 +46,18 @@ export function Contact({
                 );
               }
 
+              if (isInternalHref(channel.href)) {
+                return (
+                  <Link
+                    className={channelCardClassName}
+                    href={channel.href}
+                    key={channel.id}
+                  >
+                    {channelContent}
+                  </Link>
+                );
+              }
+
               return (
                 <a
                   className={channelCardClassName}
@@ -57,7 +74,7 @@ export function Contact({
         <div className="conversion-card grid gap-5 p-7 sm:p-9">
           {fields.map((field) => (
             <label className="grid gap-2" htmlFor={field.id} key={field.id}>
-              <span className="text-sm font-semibold text-[#211b16]">
+              <span className="text-sm font-semibold text-[#fff7ea]">
                 {field.label}
               </span>
               {field.type === "textarea" ? (
