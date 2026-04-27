@@ -165,6 +165,8 @@ export const lv: Dictionary = {
             "Veidojam noformējuma elementus kafejnīcām, restorāniem, viesu namiem un atmosfēriskiem komercprojektiem.",
           category: "Komercija",
           href: "#restaurants-themed-spaces",
+          // TODO: confirm commercial direction with client before enabling
+          isVisible: false,
         },
       ],
     },

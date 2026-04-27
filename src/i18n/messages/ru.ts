@@ -164,6 +164,8 @@ export const ru: Dictionary = {
             "Создаем элементы оформления для кафе, ресторанов, гостевых домов и атмосферных коммерческих проектов.",
           category: "Коммерция",
           href: "#restaurants-themed-spaces",
+          // TODO: confirm commercial direction with client before enabling
+          isVisible: false,
         },
       ],
     },

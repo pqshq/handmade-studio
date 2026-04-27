@@ -6,6 +6,8 @@ export function WorkDirections({
   description,
   items,
 }: WorkDirectionsContent) {
+  const visibleItems = items.filter((item) => item.isVisible !== false);
+
   return (
     <section className="section-shell section-wood" id="work-directions">
       <div aria-hidden="true" className="section-bg" />
@@ -14,16 +16,12 @@ export function WorkDirections({
         <p className="section-copy mt-6">{description}</p>
       </div>
 
-      <div className="section-container mt-14 grid gap-7 md:grid-cols-2 lg:grid-cols-6">
-        {items.map((item, index) => (
+      <div className="section-container mt-14 grid gap-7 md:auto-rows-fr md:grid-cols-2">
+        {visibleItems.map((item, index) => (
           <Link
             className={[
-              "studio-card studio-link-card block",
-              index === 0
-                ? "p-8 md:col-span-2 lg:col-span-3 lg:p-10"
-                : index > 2
-                  ? "p-8 lg:col-span-2"
-                  : "p-8 lg:col-span-3",
+              "work-direction-card studio-card studio-link-card flex h-full flex-col p-8",
+              index === 0 ? "md:col-span-2 lg:p-10" : "",
             ].join(" ")}
             href={item.href}
             key={item.id}

@@ -165,6 +165,8 @@ export const en: Dictionary = {
             "We create design elements for cafes, restaurants, guest houses and atmospheric commercial projects.",
           category: "Commercial",
           href: "#restaurants-themed-spaces",
+          // TODO: confirm commercial direction with client before enabling
+          isVisible: false,
         },
       ],
     },

@@ -53,6 +53,7 @@ export type WorkDirectionItem = {
   description: string;
   category: string;
   href: string;
+  isVisible?: boolean;
 };
 
 export type WorkDirectionsContent = {
